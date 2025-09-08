@@ -68,9 +68,27 @@ func (p *servicePackage) SDKDataSources(ctx context.Context) []*inttypes.Service
 			Region:   unique.Make(inttypes.ResourceRegionDisabled()),
 		},
 		{
+			Factory:  dataSourceConnectionGroup,
+			TypeName: "aws_cloudfront_connection_group",
+			Name:     "Connection Group",
+			Tags: unique.Make(inttypes.ServicePackageResourceTags{
+				IdentifierAttribute: names.AttrARN,
+			}),
+			Region: unique.Make(inttypes.ResourceRegionDisabled()),
+		},
+		{
 			Factory:  dataSourceDistribution,
 			TypeName: "aws_cloudfront_distribution",
 			Name:     "Distribution",
+			Tags: unique.Make(inttypes.ServicePackageResourceTags{
+				IdentifierAttribute: names.AttrARN,
+			}),
+			Region: unique.Make(inttypes.ResourceRegionDisabled()),
+		},
+		{
+			Factory:  dataSourceDistributionTenant,
+			TypeName: "aws_cloudfront_distribution_tenant",
+			Name:     "Distribution Tenant",
 			Tags: unique.Make(inttypes.ServicePackageResourceTags{
 				IdentifierAttribute: names.AttrARN,
 			}),
@@ -130,9 +148,27 @@ func (p *servicePackage) SDKResources(ctx context.Context) []*inttypes.ServicePa
 			Region:   unique.Make(inttypes.ResourceRegionDisabled()),
 		},
 		{
+			Factory:  resourceConnectionGroup,
+			TypeName: "aws_cloudfront_connection_group",
+			Name:     "Connection Group",
+			Tags: unique.Make(inttypes.ServicePackageResourceTags{
+				IdentifierAttribute: names.AttrARN,
+			}),
+			Region: unique.Make(inttypes.ResourceRegionDisabled()),
+		},
+		{
 			Factory:  resourceDistribution,
 			TypeName: "aws_cloudfront_distribution",
 			Name:     "Distribution",
+			Tags: unique.Make(inttypes.ServicePackageResourceTags{
+				IdentifierAttribute: names.AttrARN,
+			}),
+			Region: unique.Make(inttypes.ResourceRegionDisabled()),
+		},
+		{
+			Factory:  resourceDistributionTenant,
+			TypeName: "aws_cloudfront_distribution_tenant",
+			Name:     "Distribution Tenant",
 			Tags: unique.Make(inttypes.ServicePackageResourceTags{
 				IdentifierAttribute: names.AttrARN,
 			}),
